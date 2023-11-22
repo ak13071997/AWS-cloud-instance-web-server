@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+	<h2>{{ the_title }}</h2>
+
+	<form method='POST' action='/convert'>
+		<table>
+			<p>Forex Conversion/Calculation:</p>
+			<tr><td>Source Currency:</td><td>			
+			<select name="source_currency">
+				{% for source_currency in source_currency_list %}
+					<option value="{{source_currency}}">{{source_currency}}</option>
+				{% endfor %}
+			</select>	
+			
+			<!--<input name='source_currency' type='TEXT'></td></tr> -->
+			<tr><td>Target Currency:</td><td>
+			<select name="target_currency">
+				{% for target_currency in target_currency_list %}
+					<option value="{{target_currency}}">{{target_currency}}</option>
+				{% endfor %}
+			</select>	
+			
+			<!--<input name='target_currency' type='TEXT'></td></tr>-->
+			<tr><td>Amount to be Converted:</td><td><input name='source_amount' type='TEXT'></td></tr>
+		</table>
+		
+		<p>To convert, click this button:</p>
+		
+		<p><input value='Calculate!' type='SUBMIT'></p>
+	</form>
+
+{% endblock %}

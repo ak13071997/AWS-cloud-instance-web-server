@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+	<h2>{{ the_title }}</h2>
+
+	<form method='POST' action='/convert'>
+		<table>
+			<p>Convert US Dollars to:</p>
+			<!--
+			<tr><td>Source Currency:</td><td>			
+			<select name="source_currency">
+				{% for key, value in source_currency_dict.items() %}
+					<option value="{{key}}">{{value}}</option>
+				{% endfor %}
+			</select>	
+			-->
+			<!--<input name='source_currency' type='TEXT'></td></tr> -->
+			<tr><td>Target Currency:</td><td>
+			<select name="target_currency">
+				{% for key, value in target_currency_dict.items() %}
+					<option value="{{key}}">{{value}}</option>
+				{% endfor %}
+			</select>					
+			
+			<!--<input name='target_currency' type='TEXT'></td></tr>-->
+			<tr><td>Amount to be Converted:</td><td><input name='source_amount' type='TEXT'></td></tr>
+		</table>
+		
+		<p>To convert, click this button:</p>
+		
+		<p><input value='Calculate!' type='SUBMIT'></p>
+	</form>
+
+{% endblock %}

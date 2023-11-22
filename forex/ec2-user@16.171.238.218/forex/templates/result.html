@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+	<h2>{{ the_title }}</h2>
+
+	<p>You submitted the following data:</p>
+	<table>
+		<!--<tr><td>Source Currency:</td><td>{{ source_currency }}</td></tr>-->
+		<tr><td>Source Currency:</td><td>US Dollars</td></tr>
+		
+		<tr><td>Target Currency:</td><td>{{ target_currency }}</td></tr>
+		<tr><td>Amount to be Converted:</td><td>{{ source_amount }}</td></tr>		
+	</table>
+
+	<p>When we convert US Dollars to "{{ target_currency }}" for amount "{{ source_amount }}", the result is:</p>
+	<h3>{{ target_amount }}</h3>
+
+{% endblock %}
